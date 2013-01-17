@@ -23,7 +23,7 @@ This readme shows how to set up an Ubuntu VM for use with the 7LI7W book using V
  - Install Vagrant (http://vagrantup.com)
  - Create a folder for your VM and cd to it
  - Copy the Vagrantfile and the provision.sh file into the folder
- - $ vagrant box add precise32 http://files.vagrantup.com/lucid32.box
+ - $ vagrant box add precise32 http://files.vagrantup.com/precise32.box
  - $ vagrant up
 
 
