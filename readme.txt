@@ -19,6 +19,8 @@ _  / __ _  / / / __  / __  / / /_  __/
 
 This readme shows how to set up an Ubuntu VM for use with the 7LI7W book using Vagrant.  It runs on Windows, OS X and various Linux flavours.
 
+LINUX & OS X
+
  - Install Oracle Virtual Box (http://virtualbox.org)
  - Install Vagrant (http://vagrantup.com)
  - Create a folder for your VM and cd to it
@@ -31,4 +33,17 @@ It will take a while the first time you run this command as it will first downlo
 
 - $ vagrant ssh
 
-*On Windows you will also need to install PuTTY - check the Vagrant site for details of how to connect to the VM.  
+WINDOWS
+
+There is currently a bug in Vagrant that means that the provisioning script won't work on Windows - it should be fixed in the next Vagrant release.  The below steps show you how to install from a fully pre-baked box, it will actually be quicker to install than the provisioned install which will go and download everything from the net first time around.
+
+ - Install Oracle Virtual Box (http://virtualbox.org)
+ - Install Vagrant (http://vagrantup.com)
+ - On Windows you will also need to install PuTTY - check the Vagrant site for details of how to connect to the VM.  
+ - Create a folder for your VM and cd to it
+ - Copy the 7lang.box file (from scratch or USB) to your VM folder
+ - $ vagrant box add 7lang.box
+ - $ vagrant up
+ 
+ Now you can use PuTTY to connect to your new VM - username/password is vagrant/vagrant
+ 
