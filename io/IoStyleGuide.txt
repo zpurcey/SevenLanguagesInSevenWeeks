@@ -1,0 +1,36 @@
+Io Programming/Io Style Guide
+< Io Programming
+This page may need to be reviewed for quality.
+This page should contain guidelines to writing good Io code. Please contribute your wisdom, but in the interest of making it easier for readers to find things, please keep each major heading in alphabetical order.
+[edit]On Assignments
+
+Use setters whenever possible, instead of direct assignment.
+Read/Write Attributes, often found in other languages, can be simulated by overriding the setSlot method on an object. Unless you have an impeccable argument for doing so, however, don't. You'll just make your program slower to run and increase the opportunity for bugs.
+Setters have the advantage of being more legible in the long-term. Telling an object to setForeground(Color White) makes more sense when reading (and hence, when maintaining) the code than fgPen = Color White.
+Consider direct assignment on external objects as harmful.
+Let the external object decide how to affect its own state.
+Tell the object what to do; it generally knows "how to do it" better than you do.
+If an external object lacks a method to effect the state changes you consider necessary, write one. Remember that Io lets you do this, even for code you didn't write yourself.
+[edit]On Initialization
+
+In keeping with methods with three or fewer arguments, use setters to initialize object state as necessary.
+Some objects will maintain some non-trivial state. The init method should:
+be used to initialize object state to known-good defaults only, only only when necessary.
+not be used to initialize fields which acquire default literal or immutable values (e.g., 0, ""). Inherit them from a prototype instead.
+definitely be used to initialize fields which acquire default dynamically-created values (e.g., list(), etc.). Otherwise, such a value is shared by all instances of the object.
+not be used as a replacement for setters, which serve to alter the configuration of the object from its default state.
+To facilitate isolation and testability, rely on dependency injection.
+Do not attempt to acquire resources unless absolutely necessary, including files, windows, network sockets, et. al. Accept them as arguments instead.
+Remember: the object has domain-specific knowledge about itself, and specializes in itself and only itself. Keep it that way.
+Example: A spreadsheet object maintains a matrix of data which includes formulae as well as literal data. It knows nothing about how this information is stored in a data file. Instead, impex (short for importer/exporter) objects are used to either read data from a file and stuff the spreadsheet appropriately, or query the spreadsheet and write out a data file accordingly. A view object is just a special kind of exporter: one which renders the data to the screen instead of to a file. This could take the familiar form of a matrix, or it could take the form of a multi-valued chart of some kind. Likewise, the keyboard and mouse, combined, form a special kind of importer interface. Therefore, loading and saving spreadsheets is reduced to an automation of the manual task of data entry, made possible only by the fact that the spreadsheet doesn't care where the data is coming from or going to, only that the data is correct.
+Keep object state as small as possible.
+References to other objects should exist only to allow the object to do its job.
+Objects which end up performing two or more jobs should be refactored into two or more objects.
+[edit]On Methods and their Arguments
+
+Method names should begin with a lowercase letter, to preserve the established coding conventions of Io.
+Passing greater than three arguments to a method suggests that the object should be refactored.
+Minimize the number of arguments to methods.
+Use a "parameter object" which serves as an argument collection.
+Always return self in the absence of any other useful value, allowing other object methods to be chained together.
+Use method chains to refactor methods that would otherwise take more than three arguments.
