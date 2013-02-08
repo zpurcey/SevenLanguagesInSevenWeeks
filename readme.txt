@@ -42,7 +42,7 @@ There is currently a bug in Vagrant that means that the provisioning script won'
  - On Windows you will also need to install PuTTY - check the Vagrant site for details of how to connect to the VM.  
  - Create a folder for your VM and cd to it
  - Copy the 7lang.box file (from scratch or USB) to your VM folder
- - $ vagrant box add precise32 7lang.box
+ - $ vagrant init 7lang 7lang.box
  - $ vagrant up
  
  Now you can use PuTTY to connect to your new VM - username/password is vagrant/vagrant
