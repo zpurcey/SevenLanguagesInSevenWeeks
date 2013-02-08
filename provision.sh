@@ -23,13 +23,14 @@ then
 	apt-get install unzip -y
 	wget --no-check-certificate http://github.com/stevedekorte/io/zipball/master -O io-lang.zip
 	unzip io-lang.zip
-	cd stevedekorte-io-8956a60
+	#cd stevedekorte-io-8956a60
+	cd stevedekorte-io-???????
 	echo "Building Io"
 	./build.sh
 	./build.sh install
 	cd ..
 	rm io-lang.zip
-	rm -r stevedekorte-io-8956a60	
+	rm -r stevedekorte-io-???????
 else
 	echo "IO appears to be installed"
 fi
