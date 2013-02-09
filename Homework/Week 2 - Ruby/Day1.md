@@ -58,6 +58,11 @@ Andrew Purcell
 Andrew Purcell
 => 10
 ```
+Alternatively:
+```
+> puts "Andrew Purcell " * 10
+Andrew Purcell Andrew Purcell Andrew Purcell Andrew Purcell Andrew Purcell Andrew Purcell Andrew Purcell Andrew Purcell Andrew Purcell Andrew Purcell 
+```
 
 • Print the string “This is sentence number 1,” where the number 1 changes from 1 to 10.
 
