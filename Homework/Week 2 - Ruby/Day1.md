@@ -60,6 +60,21 @@ Andrew Purcell
 ```
 Alternatively:
 ```
+> 10.times {puts "Andrew Purcell"}
+Andrew Purcell
+Andrew Purcell
+Andrew Purcell
+Andrew Purcell
+Andrew Purcell
+Andrew Purcell
+Andrew Purcell
+Andrew Purcell
+Andrew Purcell
+Andrew Purcell
+=> 10
+```
+Alternatively:
+```
 > puts "Andrew Purcell " * 10
 Andrew Purcell Andrew Purcell Andrew Purcell Andrew Purcell Andrew Purcell Andrew Purcell Andrew Purcell Andrew Purcell Andrew Purcell Andrew Purcell 
 ```
