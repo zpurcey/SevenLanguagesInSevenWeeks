@@ -101,8 +101,28 @@ This is sentence number 10
 • Run a Ruby program from a file.
 
 ```
-$ cat puts "Hello World" > helloWorld.rb
-$ ruby helloWorld.rb
+$ cat puts "Hello World" > hello_world.rb
+$ ruby hello_world.rb
 Hello World
 $ 
+```
+
+• Bonus problem: If you’re feeling the need for a little more, write a pro- gram that picks a random number. Let a player guess the number, telling the player whether the guess is too low or too high.
+(Hint: rand(10) will generate a random number from 0 to 9, and gets will read a string from the keyboard that you can translate to an integer.)
+
+guess_a_number.rb:
+```
+random_number = rand(1000) + 1
+guess = 0
+num_guesses = 0
+
+while guess != random_number do
+    print "Pick a number between 1 and 1000: "
+    guess = gets.to_i
+    num_guesses += 1
+    puts "Too low!" if guess < random_number
+    puts "Too high!" if guess > random_number
+end
+
+puts "Got it in #{num_guesses}! It was #{random_number}"
 ```
