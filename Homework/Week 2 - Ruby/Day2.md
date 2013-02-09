@@ -61,10 +61,9 @@ Let the initializer accept a nested structure of hashes.
 You should be able to specify a tree like this:
 {'grandpa' => { 'dad' => {'child 1' => {}, 'child 2' => {} }, 'uncle' => {'child 3' => {}, 'child 4' => {} } } }.
 
-```
-http://nickknowlson.com/blog/2011/12/04/seven-languages-week-1-day-2/
-Uses responds_to? which returns true if the class method exists.  So when initializing the tree if name or children don't have keys it will build the structure.
-```
+
+> http://nickknowlson.com/blog/2011/12/04/seven-languages-week-1-day-2/
+> Uses responds_to? which returns true if the class method exists.  So when initializing the tree if name or children don't have keys it will build the structure.
 
 • Write a simple grep that will print the lines of a file having any occurrences of a phrase anywhere in that line.
 You will need to do a simple regular expression match and read lines from a file.
